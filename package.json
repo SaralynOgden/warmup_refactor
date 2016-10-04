@@ -1,0 +1,29 @@
+{
+  "name": "warmup_refactor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "knex": "^0.12.2",
+    "morgan": "^1.7.0",
+    "pg": "^6.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "knex": "knex",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaralynOgden/warmup_refactor.git"
+  },
+  "keywords": [],
+  "author": "Samuel Kurland <s.marius.kurland@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaralynOgden/warmup_refactor/issues"
+  },
+  "homepage": "https://github.com/SaralynOgden/warmup_refactor#readme",
+  "description": ""
+}
