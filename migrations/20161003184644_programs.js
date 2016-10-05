@@ -9,7 +9,7 @@ exports.up = function(knex) {
     table.string('type').notNullable().defaultTo('FS');
     table.string('lead_instructor').notNullable();
     table.integer('cohort_number').notNullable();
-    table.integer('location').notNullable().defaultTo('Seattle');
+    table.string('location').notNullable().defaultTo('Seattle');
     table.timestamps(true, true);
   });
 };
