@@ -1,14 +1,14 @@
 'use strict';
 
 exports.up = function(knex) {
-  return knex.schema.createTable('activity', (table) => {
+  return knex.schema.createTable('activities', (table) => {
     table.increments();
-    table.integer('student_id').notNullable();
+    table.foreign('student_id').notNullable().references('students.id');
     table.boolean('has_tried').notNullable().defaultTo(false);
     table.timestamps(true, true);
   });
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTable('activity');
+  return knex.schema.dropTable('activities');
 };
