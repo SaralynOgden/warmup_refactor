@@ -36,7 +36,7 @@ exports.seed = function(knex) {
         id: 4,
         first_name: 'Ken',
         last_name: 'McGrady',
-        github_username: 'kenmcgrady',
+        github_username: 'kmcgrady',
         is_instructor: true,
         hashed_password: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         created_at: new Date('2016-10-05 05:07:10 UTC'),
