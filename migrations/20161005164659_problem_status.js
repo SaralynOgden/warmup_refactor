@@ -6,7 +6,7 @@ exports.up = function(knex) {
     t.integer('user_id').unsigned().references('id').inTable('users');
     t.integer('problem_id').unsigned().references('id').inTable('problems');
     t.enum('progress', ['UNATTEMPTED', 'STARTED', 'ATTEMPTED', 'SOLVED']).defaultTo('UNATTEMPTED');
-    t.specificType('hashed_password', 'char(60)').notNullable();
+    t.text('answer').defaultTo('');
     t.timestamps(true, true);
   });
 };
