@@ -3,19 +3,21 @@
 'use strict';
 
 exports.seed = function(knex) {
-  return knex('problems').del()
+  return knex('problem_status').del()
     .then(() => {
-      return knex('problems').insert([{
+      return knex('problem_status').insert([{
         id: 1,
-        problem_text: 'What does const mean?',
-        type: 'js',
+        user_id: 1,
+        problem_id: 1,
+        progress: 'UNATTEMPTED',
+        answer: '',
         created_at: new Date('2016-10-05 05:07:10 UTC'),
         updated_at: new Date('2016-10-05 05:07:10 UTC')
       }]);
     })
     .then(() => {
       return knex.raw(
-        "SELECT setval('problems_id_seq', (SELECT MAX(id) FROM problems));"
+        "SELECT setval('problem_status_id_seq', (SELECT MAX(id) FROM problem_status));"
       );
     });
 };

@@ -3,14 +3,15 @@
 'use strict';
 
 exports.seed = function(knex) {
-  return knex('students').del()
+  return knex('users').del()
     .then(() => {
-      return knex('students').insert([{
+      return knex('users').insert([{
         id: 1,
         first_name: 'Metta',
         last_name: 'Crouse',
         github_username: 'mtcrouse',
-        hashed_password: '32fdc12d2e187811af0d771e6c29e1a0a3a356b6',
+        is_instructor: false,
+        hashed_password: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         created_at: new Date('2016-10-05 05:07:10 UTC'),
         updated_at: new Date('2016-10-05 05:07:10 UTC')
       }, {
@@ -18,7 +19,8 @@ exports.seed = function(knex) {
         first_name: 'Samuel',
         last_name: 'Kurland',
         github_username: 'smk291',
-        hashed_password: 'f16bed56189e249fe4ca8ed10a1ecae60e8ceac0',
+        is_instructor: false,
+        hashed_password: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         created_at: new Date('2016-10-05 05:07:10 UTC'),
         updated_at: new Date('2016-10-05 05:07:10 UTC')
       }, {
@@ -26,14 +28,24 @@ exports.seed = function(knex) {
         first_name: 'Saralyn',
         last_name: 'Ogden',
         github_username: 'SaralynOgden',
-        hashed_password: 'b1e4e8ba68f4fcaf2ee1c86c42609c74391454e2',
+        is_instructor: false,
+        hashed_password: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+        created_at: new Date('2016-10-05 05:07:10 UTC'),
+        updated_at: new Date('2016-10-05 05:07:10 UTC')
+      }, {
+        id: 4,
+        first_name: 'Ken',
+        last_name: 'McGrady',
+        github_username: 'kenmcgrady',
+        is_instructor: true,
+        hashed_password: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         created_at: new Date('2016-10-05 05:07:10 UTC'),
         updated_at: new Date('2016-10-05 05:07:10 UTC')
       }]);
     })
     .then(() => {
       return knex.raw(
-        "SELECT setval('students_id_seq', (SELECT MAX(id) FROM students));"
+        "SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));"
       );
     });
 };
