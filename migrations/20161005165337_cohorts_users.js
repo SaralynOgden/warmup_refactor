@@ -5,7 +5,8 @@ exports.up = function(knex) {
     t.increments();
     t.integer('cohort_id').unsigned().references('id').inTable('cohorts');
     t.integer('user_id').unsigned().references('id').inTable('users');
-    t.enum('progress', ['UNATTEMPTED', 'STARTED', 'ATTEMPTED', 'SOLVED']).defaultTo('UNATTEMPTED');
+    t.boolean('is_instructor').defaultTo(false);
+    t.boolean('is_lead_instructor').defaultTo(false);
     t.timestamps(true, true);
   });
 };
